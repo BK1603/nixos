@@ -84,7 +84,8 @@
     bindings = [
       { keys = [ 224 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 5"; }
       { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 5"; }
-      { keys = [ 122 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/amixer set 'Master' 5%-"; } { keys = [ 123 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/amixer set 'Master' 5%+"; }
+      { keys = [ 122 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/amixer set 'master' 5%-"; } { keys = [ 123 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/amixer set 'master' 5%+"; }
+      { keys = [ 123 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/amixer set 'master' 5%+"; } { keys = [ 123 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/amixer set 'master' 5%+"; }
     ];
   };
 
