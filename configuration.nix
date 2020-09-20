@@ -84,8 +84,7 @@
     bindings = [
       { keys = [ 224 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 5"; }
       { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 5"; }
-      { keys = [ 122 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/amixer set 'Master' 5%-"; }
-      { keys = [ 123 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/amixer set 'Master' 5%+"; }
+      { keys = [ 122 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/amixer set 'Master' 5%-"; } { keys = [ 123 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/amixer set 'Master' 5%+"; }
     ];
   };
 
@@ -125,11 +124,11 @@
       # dwm from personal github fork
       dwm = super.dwm.overrideAttrs (oa: {
         src = super.fetchFromGitHub {
-	  owner = "BK1603";
-	  repo = "dwm";
-	  rev = "14e7b26e3d6425a65f14aa985e53685e3fe6049e";
-	  sha256 = "1na10wdcvgjzl5iiz66mxdfxdwcvy0fhdmlrshfvzr0fnp6kx2mx";
-	};
+                owner = "BK1603";
+                repo = "dwm";
+                rev = "2cfc08d2bcaf8a272496715922d3ebf12fa6d790";
+                sha256 = "11hlfipixz50rxqksgy88qznhl6cbj4pdg3ds6lnzjnnqxqfbdi3";
+              };
 	
 	patches = oa.patches ++ [
 	  (builtins.fetchurl https://dwm.suckless.org/patches/fibonacci/dwm-fibonacci-6.2.diff)
@@ -147,7 +146,7 @@
 	};
 	
         patches = oa.patches ++ [
-          (builtins.fetchurl https://st.suckless.org/patches/nordtheme/st-nordtheme-0.8.2.diff)
+          (builtins.fetchurl https://st.suckless.org/patches/dracula/st-dracula-0.8.2.diff)
         ];
       });
     })
@@ -158,7 +157,7 @@
   services.xserver.desktopManager.xterm.enable = false;
   services.xserver.displayManager.defaultSession = "none+dwm";
   services.xserver.displayManager.sessionCommands = ''
-    feh --bg-fill /home/bk1603/Downloads/5k-mountains.jpg;
+    feh --bg-fill /home/bk1603/Downloads/wallpaper.jpg;
     /home/bk1603/.xsetroot &
   '';
 
